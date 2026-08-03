@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Alexandre — Projets</title>
+<meta name="description" content="Page racine. Les projets sont hébergés dans leurs sous-dossiers.">
+<meta name="theme-color" content="#02100a">
+<!-- Raison d'être de cette page : Safari mémorise le favicon pour le domaine
+     entier et interroge la racine. Sans elle, la racine renvoyait 404 et
+     Safari en déduisait qu'aucun projet du domaine n'avait d'icône. -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/lebonplan-favicon-256.png">
+<link rel="icon" type="image/svg+xml" href="assets/lebonplan-icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#02100a; --green:#3DF089; --ink:#eaf7f0; --muted:#7d9b8c; --line:rgba(0,255,140,.16); }
+  *{box-sizing:border-box;}
+  body{margin:0;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:28px;
+       background:radial-gradient(120% 100% at 50% 0%,#06210f,var(--bg) 70%);
+       font-family:Manrope,system-ui,sans-serif;color:var(--ink);}
+  .carte{width:100%;max-width:420px;text-align:center;}
+  .marque{display:flex;align-items:center;justify-content:center;gap:12px;font-weight:800;font-size:24px;margin-bottom:10px;}
+  .marque img{width:34px;height:34px;border-radius:9px;}
+  .marque span{color:var(--green);}
+  p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 26px;}
+  a.lien{display:flex;align-items:center;gap:14px;text-align:left;text-decoration:none;color:var(--ink);
+         border:1px solid var(--line);border-radius:16px;padding:16px 18px;transition:border-color .2s,background .2s;}
+  a.lien:hover{border-color:rgba(0,255,140,.4);background:rgba(0,255,140,.05);}
+  a.lien img{width:38px;height:38px;border-radius:10px;flex:0 0 auto;}
+  a.lien b{display:block;font-size:16px;}
+  a.lien small{color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+  <main class="carte">
+    <div class="marque"><img src="assets/lebonplan-favicon-256.png" alt="">LEBON<span>PLAN</span></div>
+    <p>Les meilleurs plans du web, réservés à celles et ceux qui savent où regarder.</p>
+    <a class="lien" href="/lebonplan/">
+      <img src="assets/lebonplan-favicon-256.png" alt="">
+      <span><b>Accéder au site</b><small>Erreurs de prix, codes promo, aides officielles</small></span>
+    </a>
+  </main>
+</body>
+</html>
