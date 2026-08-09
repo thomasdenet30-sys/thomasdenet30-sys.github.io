@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="robots" content="noindex">
+<title>APLOMB — lecteur</title>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #15110E; overflow: hidden; }
+  iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .msg {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    color: #9A8C7B; font: 14px -apple-system, BlinkMacSystemFont, sans-serif; text-align: center; padding: 24px;
+  }
+</style>
+</head>
+<body>
+<script>
+// Page relais du lecteur vidéo d'APLOMB.
+// L'app affiche cette page dans une WebView : YouTube reçoit alors une origine
+// https réelle (thomasdenet30-sys.github.io) et accepte l'intégration, ce qu'il
+// refuse quand l'iframe vit dans du HTML injecté sans domaine.
+(function () {
+  var id = new URLSearchParams(location.search).get('v') || '';
+
+  // Un identifiant YouTube fait 11 caractères alphanumériques (plus - et _).
+  // On valide avant d'injecter, pour qu'un paramètre trafiqué ne puisse pas
+  // faire charger autre chose que le lecteur.
+  if (!/^[A-Za-z0-9_-]{11}$/.test(id)) {
+    var p = document.createElement('p');
+    p.className = 'msg';
+    p.textContent = 'Vidéo indisponible.';
+    document.body.appendChild(p);
+    return;
+  }
+
+  var params = [
+    'autoplay=1',
+    'playsinline=1',
+    'rel=0',
+    'modestbranding=1',
+    'controls=1',
+    'fs=1',
+    'iv_load_policy=3',
+    'loop=1',
+    'playlist=' + id
+  ].join('&');
+
+  var frame = document.createElement('iframe');
+  frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?' + params;
+  frame.allow = 'autoplay; encrypted-media; picture-in-picture';
+  frame.allowFullscreen = true;
+  document.body.appendChild(frame);
+})();
+</script>
+</body>
+</html>
