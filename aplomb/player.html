@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="robots" content="noindex">
 <title>APLOMB — lecteur</title>
+
+<!-- Ouvre DNS, TCP et TLS vers YouTube dès le chargement de cette page, donc
+     avant même que l'utilisateur appuie sur lecture. C'est ce qui coûte le plus
+     cher au démarrage : autant le payer pendant qu'il lit la fiche. -->
+<link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
+<link rel="preconnect" href="https://www.youtube.com" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://rr1---sn-25glene6.googlevideo.com" crossorigin>
+<link rel="dns-prefetch" href="https://googlevideo.com">
+<link rel="dns-prefetch" href="https://static.doubleclick.net">
+
 <style>
   html, body { margin: 0; padding: 0; height: 100%; background: #15110E; overflow: hidden; }
   iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -17,11 +29,18 @@
 <body>
 <script>
 // Page relais du lecteur vidéo d'APLOMB.
-// L'app affiche cette page dans une WebView : YouTube reçoit alors une origine
-// https réelle (thomasdenet30-sys.github.io) et accepte l'intégration, ce qu'il
-// refuse quand l'iframe vit dans du HTML injecté sans domaine.
+// L'app l'affiche dans une WebView : YouTube reçoit alors une origine https
+// réelle et accepte l'intégration, ce qu'il refuse quand l'iframe vit dans du
+// HTML injecté sans domaine.
+//
+// L'app charge cette page à l'avance, dès l'ouverture de la fiche machine, avec
+// auto=0 : les connexions s'ouvrent pendant la lecture de la fiche, et l'appui
+// sur lecture n'a plus qu'à appeler startPlayer(). Sans ce préchargement, tout
+// s'enchaînait après l'appui — d'où l'attente.
 (function () {
-  var id = new URLSearchParams(location.search).get('v') || '';
+  var params = new URLSearchParams(location.search);
+  var id = params.get('v') || '';
+  var auto = params.get('auto') !== '0';
 
   // Un identifiant YouTube fait 11 caractères alphanumériques (plus - et _).
   // On valide avant d'injecter, pour qu'un paramètre trafiqué ne puisse pas
@@ -34,23 +53,30 @@
     return;
   }
 
-  var params = [
-    'autoplay=1',
-    'playsinline=1',
-    'rel=0',
-    'modestbranding=1',
-    'controls=1',
-    'fs=1',
-    'iv_load_policy=3',
-    'loop=1',
-    'playlist=' + id
-  ].join('&');
+  var started = false;
 
-  var frame = document.createElement('iframe');
-  frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?' + params;
-  frame.allow = 'autoplay; encrypted-media; picture-in-picture';
-  frame.allowFullscreen = true;
-  document.body.appendChild(frame);
+  window.startPlayer = function () {
+    if (started) return;
+    started = true;
+    var qs = [
+      'autoplay=1',
+      'playsinline=1',
+      'rel=0',
+      'modestbranding=1',
+      'controls=1',
+      'fs=1',
+      'iv_load_policy=3',
+      'loop=1',
+      'playlist=' + id
+    ].join('&');
+    var frame = document.createElement('iframe');
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?' + qs;
+    frame.allow = 'autoplay; encrypted-media; picture-in-picture';
+    frame.allowFullscreen = true;
+    document.body.appendChild(frame);
+  };
+
+  if (auto) window.startPlayer();
 })();
 </script>
 </body>
