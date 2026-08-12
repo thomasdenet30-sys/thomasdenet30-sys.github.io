@@ -276,6 +276,63 @@
   </p>
 </div>
 
+<h2>Les notifications</h2>
+
+<p>
+  Si tu acceptes les notifications, APLOMB te rappelle tes séances les jours
+  que tu as toi-même planifiés. <strong>Ces rappels-là sont calculés par ton
+  téléphone</strong> : ils ne passent par aucun serveur, et personne — nous
+  compris — ne sait quand ils s’affichent ni ce qu’ils disent.
+</p>
+
+<p>
+  Une seconde sorte de message existe : les annonces, pour prévenir de la
+  sortie du programme personnalisé ou d’une nouveauté. Celles-là partent bien
+  de chez nous, via <strong>Firebase Cloud Messaging</strong>, un service de
+  Google.
+</p>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Question</th><th>Réponse</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ce qui est utilisé</td>
+      <td>Un <strong>jeton d’appareil</strong> attribué par Google à ton
+        installation. C’est une suite de caractères qui désigne un téléphone,
+        pas une personne : il ne dit ni qui tu es, ni ton nom, ni comment te
+        joindre ailleurs.</td>
+    </tr>
+    <tr>
+      <td>Ce que nous en faisons</td>
+      <td><strong>Rien.</strong> Nous ne le stockons pas et ne tenons aucune
+        liste. L’app s’abonne à un canal unique, commun à toutes les
+        installations, et une annonce est envoyée à ce canal — jamais à
+        quelqu’un en particulier. Nous n’avons donc aucun moyen de viser un
+        appareil, ni de savoir combien vous êtes.</td>
+    </tr>
+    <tr>
+      <td>Base légale</td>
+      <td>Ton consentement, donné en autorisant les notifications.</td>
+    </tr>
+    <tr>
+      <td>Pour arrêter</td>
+      <td>Coupe <em>Rappels de séance</em> dans les réglages de l’app, ou les
+        notifications d’APLOMB dans ceux du téléphone. L’abonnement au canal
+        est retiré, et le jeton cesse d’exister quand tu désinstalles.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>
+  Le traitement opéré par Google à cette occasion relève de ses propres règles ;
+  voir la <a href="https://firebase.google.com/support/privacy" rel="noopener">politique
+  de confidentialité de Firebase</a>.
+</p>
+
 <h2>Les vidéos</h2>
 
 <p>
@@ -333,6 +390,7 @@
   <li>Aucun compte à créer, aucun mot de passe</li>
   <li>Aucun outil de mesure d’audience, aucun rapport de plantage</li>
   <li>Aucun accès à ta position, tes contacts, ton micro, tes photos</li>
+  <li>Aucun profil publicitaire, aucun recoupement entre appareils</li>
   <li>Aucune donnée de santé lue ou écrite (Santé / Google Fit ne sont pas
     sollicités)</li>
   <li>Aucune revente de données, à personne, jamais</li>
