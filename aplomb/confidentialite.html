@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité — APLOMB</title>
+<meta name="description" content="Ce qu’APLOMB fait de tes données : presque tout reste sur ton téléphone.">
+<link rel="icon" href="../favicon.ico">
+<style>
+  :root {
+    --ink: #15110E;
+    --ink2: #1C1712;
+    --surface: #221C16;
+    --line: rgba(255, 240, 224, .09);
+    --line2: rgba(255, 240, 224, .16);
+    --text: #F4ECE1;
+    --text2: #C9BCAB;
+    --text3: #9A8C7B;
+    --flame: #FF5B34;
+    --flame2: #FF7A54;
+    --flame-soft: rgba(255, 91, 52, .15);
+    --safe: #3ED18C;
+    --warn: #FFB13E;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--text2);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 5rem;
+  }
+
+  header { margin-bottom: 2.5rem; }
+
+  .mark {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    color: var(--flame2);
+    background: var(--flame-soft);
+    border: 1px solid rgba(255, 91, 52, .28);
+    border-radius: 999px;
+    padding: .4rem .85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    color: var(--text);
+    font-size: clamp(1.9rem, 6vw, 2.6rem);
+    line-height: 1.12;
+    letter-spacing: -.02em;
+    margin: 0 0 .6rem;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 1.08rem;
+    color: var(--text2);
+    margin: 0;
+  }
+
+  .updated {
+    margin-top: 1.5rem;
+    font-size: .85rem;
+    color: var(--text3);
+  }
+
+  h2 {
+    color: var(--text);
+    font-size: 1.28rem;
+    letter-spacing: -.01em;
+    margin: 3rem 0 .85rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--line);
+    text-wrap: balance;
+  }
+
+  h3 {
+    color: var(--text);
+    font-size: 1rem;
+    margin: 1.75rem 0 .5rem;
+  }
+
+  p { margin: 0 0 1rem; }
+
+  ul { margin: 0 0 1rem; padding-left: 1.15rem; }
+
+  li { margin-bottom: .5rem; }
+
+  strong { color: var(--text); font-weight: 600; }
+
+  a { color: var(--flame2); text-underline-offset: .18em; }
+
+  a:focus-visible {
+    outline: 2px solid var(--flame2);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  .card {
+    background: var(--ink2);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 1.25rem 1.4rem;
+    margin: 1.5rem 0;
+  }
+
+  .card.accent { border-color: rgba(255, 91, 52, .28); }
+
+  .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+
+  .card h3 { margin-top: 0; }
+
+
+  .table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .93rem;
+    min-width: 30rem;
+  }
+
+  th, td {
+    text-align: left;
+    padding: .7rem .8rem;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  th {
+    color: var(--text);
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text3);
+  }
+
+  td:first-child { color: var(--text); }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--line);
+    font-size: .87rem;
+    color: var(--text3);
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+<header>
+  <span class="mark">APLOMB</span>
+  <h1>Politique de confidentialité</h1>
+  <p class="lede">
+    APLOMB explique les machines de la salle de sport. Pour faire ça, il n’a
+    presque besoin de rien : tout ce que tu enregistres reste sur ton téléphone.
+    Une seule donnée en sort, et seulement si tu la donnes.
+  </p>
+  <p class="updated">Dernière mise à jour : 12 août 2026</p>
+</header>
+
+<h2>Qui est responsable</h2>
+
+<p>
+  L’application APLOMB (identifiant <code>com.guims.aplomb</code>) est éditée
+  par <strong>Alexandre Thomas</strong>, personne physique, responsable du
+  traitement des données décrites ici.
+</p>
+
+<p>
+  Pour toute question ou demande concernant tes données :
+  <a href="mailto:aplomb.contact@gmail.com">aplomb.contact@gmail.com</a>
+</p>
+
+<h2>Ce qui reste sur ton téléphone</h2>
+
+<p>
+  La quasi-totalité de ce qu’APLOMB retient est stockée dans la mémoire de
+  l’application, sur ton appareil. Ces informations ne sont transmises nulle
+  part : ni à nous, ni à qui que ce soit. Nous n’y avons pas accès.
+</p>
+
+<ul>
+  <li>Ton prénom, si tu l’as saisi à la première ouverture</li>
+  <li>Le sexe indiqué, qui ne sert qu’à choisir la silhouette affichée</li>
+  <li>Tes objectifs</li>
+  <li>Les machines que tu enregistres</li>
+  <li>Les séances faites, les séries cochées, ta progression</li>
+  <li>Le planning de ta semaine</li>
+  <li>La date de ta première ouverture de l’app</li>
+  <li>Le nombre de fois où tu as consulté la page du programme personnalisé</li>
+</ul>
+
+<p>
+  Tout disparaît si tu supprimes l’application. Tu peux aussi tout effacer sans
+  la désinstaller : <strong>Profil → Réglages → Effacer mes données</strong>.
+</p>
+
+<h2>La seule donnée qui sort : ton adresse électronique</h2>
+
+<p>
+  Sur la page du programme personnalisé, un bouton « Ça m’intéresse » propose de
+  laisser une adresse pour être prévenu de la sortie. <strong>C’est
+  facultatif</strong> : l’application fonctionne entièrement sans, et rien n’y
+  est bridé si tu refuses.
+</p>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Question</th><th>Réponse</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ce qui est envoyé</td>
+      <td>Ton adresse électronique, l’écran depuis lequel tu as ouvert la page,
+        et la date. Rien d’autre : ni ton prénom, ni tes séances, ni aucun
+        identifiant d’appareil.</td>
+    </tr>
+    <tr>
+      <td>À quoi ça sert</td>
+      <td>À t’envoyer <strong>un message</strong>, le jour où le programme
+        personnalisé sort. Pas de lettre d’information, pas de relance
+        commerciale.</td>
+    </tr>
+    <tr>
+      <td>Base légale</td>
+      <td>Ton consentement (article 6.1.a du RGPD), donné en touchant le bouton
+        d’envoi.</td>
+    </tr>
+    <tr>
+      <td>Où c’est conservé</td>
+      <td>Dans une feuille de calcul Google Sheets. Google agit comme
+        sous-traitant ; des transferts hors de l’Union européenne peuvent avoir
+        lieu, encadrés par le cadre de protection des données UE&#8209;États-Unis.</td>
+    </tr>
+    <tr>
+      <td>Combien de temps</td>
+      <td>Jusqu’à l’envoi de l’annonce, et au maximum vingt-quatre mois après
+        ta saisie. Effacé plus tôt si tu le demandes.</td>
+    </tr>
+    <tr>
+      <td>Qui d’autre y accède</td>
+      <td>Personne. L’adresse n’est ni vendue, ni louée, ni transmise à un
+        partenaire.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="card accent">
+  <h3>Un point important sur l’effacement</h3>
+  <p>
+    « Effacer mes données » dans l’application supprime la copie stockée sur ton
+    téléphone, <strong>mais pas la ligne enregistrée dans notre feuille</strong>.
+    Pour que celle-ci soit supprimée, écris-nous à l’adresse de contact indiquée
+    plus haut : c’est fait sous trente jours, sans avoir à te justifier.
+  </p>
+</div>
+
+<h2>Les vidéos</h2>
+
+<p>
+  Chaque machine est expliquée par une vidéo hébergée sur YouTube et lue à
+  l’intérieur de l’application. Le lecteur utilise le mode de confidentialité
+  avancée de YouTube (<code>youtube-nocookie.com</code>), qui limite ce qui est
+  déposé sur ton appareil. Les vignettes sont chargées depuis les serveurs
+  d’images de YouTube.
+</p>
+
+<p>
+  La lecture d’une vidéo reste un échange avec Google, qui peut recueillir des
+  informations techniques à cette occasion (adresse IP, type d’appareil). Ce
+  traitement relève de la
+  <a href="https://policies.google.com/privacy?hl=fr" rel="noopener">politique de
+  confidentialité de Google</a>. Nous ne recevons aucune donnée de lecture :
+  nous ne savons pas quelles vidéos tu regardes.
+</p>
+
+<h2>La publicité</h2>
+
+<p>
+  APLOMB est gratuit et financé par la publicité, affichée pendant les temps de
+  pause et entre deux machines — jamais pendant un exercice. Elle est fournie
+  par Google AdMob.
+</p>
+
+<ul>
+  <li>
+    <strong>Les publicités sont demandées en mode non personnalisé.</strong>
+    Elles sont choisies en fonction du contenu affiché, pas d’un profil constitué
+    à partir de ta navigation.
+  </li>
+  <li>
+    Avant la première publicité, un formulaire de consentement fourni par Google
+    te permet de choisir. Tu peux revenir sur ce choix à tout moment dans
+    <strong>Réglages</strong>.
+  </li>
+  <li>
+    L’application <strong>n’affiche aucune demande de suivi</strong> (App
+    Tracking Transparency) et n’utilise pas l’identifiant publicitaire de ton
+    appareil pour te suivre d’une application ou d’un site à l’autre.
+  </li>
+</ul>
+
+<p>
+  Google reste responsable des traitements qu’il opère à cette occasion ; voir
+  <a href="https://business.safety.google/privacy/" rel="noopener">les règles de
+  confidentialité de Google pour les partenaires</a>.
+</p>
+
+<h2>Ce qu’APLOMB ne fait pas</h2>
+
+<ul>
+  <li>Aucun compte à créer, aucun mot de passe</li>
+  <li>Aucun outil de mesure d’audience, aucun rapport de plantage</li>
+  <li>Aucun accès à ta position, tes contacts, ton micro, tes photos</li>
+  <li>Aucune donnée de santé lue ou écrite (Santé / Google Fit ne sont pas
+    sollicités)</li>
+  <li>Aucune revente de données, à personne, jamais</li>
+  <li>Aucune décision automatisée produisant un effet juridique à ton égard</li>
+</ul>
+
+<h2>Les enfants</h2>
+
+<p>
+  APLOMB s’adresse à des personnes majeures ou adolescentes accompagnées, et
+  n’est pas destiné aux enfants de moins de quinze ans. Nous ne recueillons pas
+  sciemment l’adresse d’un enfant. Si cela arrivait, écris-nous : elle sera
+  supprimée.
+</p>
+
+<h2>Tes droits</h2>
+
+<p>
+  Le règlement général sur la protection des données te donne, sur l’adresse que
+  tu nous as confiée, un droit d’accès, de rectification, d’effacement, de
+  limitation, d’opposition et de portabilité. Tu peux également retirer ton
+  consentement à tout moment — le retirer n’annule pas la validité de ce qui a
+  été fait avant.
+</p>
+
+<p>
+  Une seule adresse pour tout cela, celle de contact indiquée en haut de page.
+  Nous répondons sous trente jours.
+</p>
+
+<p>
+  Si la réponse ne te satisfait pas, tu peux saisir la Commission nationale de
+  l’informatique et des libertés :
+  <a href="https://www.cnil.fr/fr/plaintes" rel="noopener">cnil.fr/fr/plaintes</a>.
+</p>
+
+<h2>Modifications</h2>
+
+<p>
+  Cette politique peut évoluer si l’application change. La date de dernière mise
+  à jour, en haut de page, indique la version en vigueur. Un changement qui
+  toucherait à ce qui sort de ton téléphone serait annoncé dans l’application
+  elle-même.
+</p>
+
+<footer>
+  APLOMB — chaque machine expliquée, pas à pas.
+</footer>
+
+</main>
+</body>
+</html>
